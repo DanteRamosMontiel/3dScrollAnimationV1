@@ -1,5 +1,5 @@
 :root {
-  --bg: #FAF9F5;
+  --bg: #FFFFFF;
   --surface: #F1EFE6;
   --ink: #18170F;
   --ink-dim: #6F6C61;
@@ -13,9 +13,13 @@
   --container: 1100px;
 }
 
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
 
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   margin: 0;
@@ -25,25 +29,30 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-::selection { background: var(--copper); color: var(--bg); }
+::selection {
+  background: var(--copper);
+  color: var(--bg);
+}
 
-a { color: inherit; }
+a {
+  color: inherit;
+}
 
 /* ===========================
    OVERLAY
 =========================== */
 
-.overlay{
-    position: fixed;
-    left: 0;
-    top: 0;
-    width:  100%;
-    height: 100%;
-    background: rgb(0, 0, 0, .8);
-    z-index: 100;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.overlay {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgb(0, 0, 0);
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* ===========================
@@ -59,8 +68,9 @@ a { color: inherit; }
   box-sizing: border-box;
   animation: rotation 1s linear infinite;
 }
+
 .loader::after {
-  content: '';  
+  content: '';
   box-sizing: border-box;
   position: absolute;
   left: 50%;
@@ -77,16 +87,19 @@ a { color: inherit; }
   0% {
     transform: rotate(0deg);
   }
+
   100% {
     transform: rotate(360deg);
   }
-} 
+}
 
 /* ---------- NAV ---------- */
 
 nav {
   position: fixed;
-  top: 0; left: 0; right: 0;
+  top: 0;
+  left: 0;
+  right: 0;
   z-index: 50;
   display: flex;
   justify-content: space-between;
@@ -98,8 +111,14 @@ nav {
   background: linear-gradient(var(--bg) 60%, transparent);
 }
 
-.nav-mark { color: var(--ink); font-weight: 500; }
-.nav-tag { color: var(--ink-dim); }
+.nav-mark {
+  color: var(--ink);
+  font-weight: 500;
+}
+
+.nav-tag {
+  color: var(--ink-dim);
+}
 
 /* ---------- HERO INTRO ---------- */
 
@@ -166,8 +185,15 @@ nav {
 }
 
 @keyframes pulse {
-  0%, 100% { opacity: 0.3; }
-  50% { opacity: 1; }
+
+  0%,
+  100% {
+    opacity: 0.3;
+  }
+
+  50% {
+    opacity: 1;
+  }
 }
 
 /* ---------- SCROLL-SCRUB SECTION ---------- */
@@ -222,19 +248,50 @@ nav {
   pointer-events: none;
 }
 
-.callout.is-active { opacity: 1; }
+.callout.is-active {
+  opacity: 1;
+}
 
-.callout .index { color: var(--copper); }
-.callout .leader { width: 28px; height: 1px; background: var(--hairline); }
-.callout .label { color: var(--ink); }
+.callout .index {
+  color: var(--copper);
+}
 
-.callout[data-pos="tl"] { top: 14%; left: clamp(20px, 6vw, 9%); }
-.callout[data-pos="tr"] { top: 14%; right: clamp(20px, 6vw, 9%); flex-direction: row-reverse; }
-.callout[data-pos="bl"] { bottom: 16%; left: clamp(20px, 6vw, 9%); }
-.callout[data-pos="br"] { bottom: 16%; right: clamp(20px, 6vw, 9%); flex-direction: row-reverse; }
+.callout .leader {
+  width: 28px;
+  height: 1px;
+  background: var(--hairline);
+}
+
+.callout .label {
+  color: var(--ink);
+}
+
+.callout[data-pos="tl"] {
+  top: 14%;
+  left: clamp(20px, 6vw, 9%);
+}
+
+.callout[data-pos="tr"] {
+  top: 14%;
+  right: clamp(20px, 6vw, 9%);
+  flex-direction: row-reverse;
+}
+
+.callout[data-pos="bl"] {
+  bottom: 16%;
+  left: clamp(20px, 6vw, 9%);
+}
+
+.callout[data-pos="br"] {
+  bottom: 16%;
+  right: clamp(20px, 6vw, 9%);
+  flex-direction: row-reverse;
+}
 
 @media (max-width: 720px) {
-  .callout { display: none; }
+  .callout {
+    display: none;
+  }
 }
 
 .progress-rail {
@@ -294,10 +351,15 @@ nav {
   transition: border-color 0.2s ease, gap 0.2s ease;
 }
 
-.cta:hover { gap: 14px; border-color: var(--copper); }
+.cta:hover {
+  gap: 14px;
+  border-color: var(--copper);
+}
 
 @media (max-width: 760px) {
-  .closing { grid-template-columns: 1fr; }
+  .closing {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* ---------- FOOTER / SPEC PLATE ---------- */
@@ -317,9 +379,16 @@ footer {
   color: var(--ink-dim);
 }
 
-footer span span { color: var(--copper); }
+footer span span {
+  color: var(--copper);
+}
 
 @media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
-  .scroll-cue .line { animation: none; }
+  html {
+    scroll-behavior: auto;
+  }
+
+  .scroll-cue .line {
+    animation: none;
+  }
 }
