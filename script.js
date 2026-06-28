@@ -4,7 +4,6 @@
   const scrollContainer = document.querySelector('.scroll-container');
   const progressFill = document.getElementById('progressFill');
   const overlay = document.querySelector(".overlay");
-  const body = document.querySelector(".body");
   const callouts = Array.from(document.querySelectorAll('.callout')).map((el) => ({
     el,
     range: el.dataset.range.split(',').map(Number),
@@ -12,7 +11,6 @@
 
   window.addEventListener("load", () => {
     overlay.style.display = "none";
-    body.style.overflow = "auto";
   });
 
   const FRAME_COUNT = 121;
