@@ -1,87 +1,98 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bajo el IHS — Anatomía de un procesador</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bajo el IHS — Anatomía de un procesador</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
-<body>
 
-<nav>
-  <span class="nav-mark">DRM&nbsp;//&nbsp;TEST PLACE</span>
-  <span class="nav-tag">MICROPROCESADOR — 014</span>
-</nav>
+<body class="body">
 
-<section class="intro">
-  <div class="eyebrow">Microarquitectura · Inspección visual</div>
-  <h1>Lo que hay dentro de un chip moderno</h1>
-  <p>
-    Cada procesador esconde un mapa de silicio: millones de transistores
-    organizados en zonas con un propósito específico. Bajá para recorrerlo,
-    capa por capa, como si estuviera bajo el microscopio.
-  </p>
-  <div class="scroll-cue">
-    <span class="line"></span>
-    SCROLL
+  <div class="overlay">
+    <span class="loader"></span>
   </div>
-</section>
 
-<div class="scroll-container">
-  <div class="pin">
-    <canvas id="canvas"></canvas>
+  <nav>
+    <span class="nav-mark">DRM&nbsp;//&nbsp;TEST PLACE</span>
+    <span class="nav-tag">MICROPROCESADOR — 014</span>
+  </nav>
 
-    <div class="callout" data-pos="tl" data-range="0,0.28">
-      <span class="index">01</span>
-      <span class="leader"></span>
-      <span class="label">Núcleos de cómputo</span>
-    </div>
-
-    <div class="callout" data-pos="tr" data-range="0.2,0.5">
-      <span class="index">02</span>
-      <span class="leader"></span>
-      <span class="label">Caché L3 compartida</span>
-    </div>
-
-    <div class="callout" data-pos="bl" data-range="0.45,0.75">
-      <span class="index">03</span>
-      <span class="leader"></span>
-      <span class="label">Controlador de memoria</span>
-    </div>
-
-    <div class="callout" data-pos="br" data-range="0.7,1">
-      <span class="index">04</span>
-      <span class="leader"></span>
-      <span class="label">Interconexión / I-O</span>
-    </div>
-
-    <div class="progress-rail"><div class="progress-fill" id="progressFill"></div></div>
-  </div>
-</div>
-
-<section class="closing">
-  <h2>Construido en capas,<br>entendido en detalle.</h2>
-  <div>
+  <section class="intro">
+    <div class="eyebrow">Microarquitectura · Inspección visual</div>
+    <h1>Lo que hay dentro de un chip moderno</h1>
     <p>
-      Este recorrido visual está armado a partir de un render del die,
-      descompuesto en fotogramas y sincronizado con el scroll: cada
-      posición de la página corresponde a un punto exacto del giro,
-      sin depender de la reproducción de un video.
+      Cada procesador esconde un mapa de silicio: millones de transistores
+      organizados en zonas con un propósito específico. Bajá para recorrerlo,
+      capa por capa, como si estuviera bajo el microscopio.
     </p>
-    <a class="cta" href="#">Ver más proyectos →</a>
+    <div class="scroll-cue">
+      <span class="line"></span>
+      SCROLL
+    </div>
+  </section>
+
+  <div class="scroll-container">
+    <div class="pin">
+      <canvas id="canvas"></canvas>
+
+      <div class="callout" data-pos="tl" data-range="0,0.28">
+        <span class="index">01</span>
+        <span class="leader"></span>
+        <span class="label">Núcleos de cómputo</span>
+      </div>
+
+      <div class="callout" data-pos="tr" data-range="0.2,0.5">
+        <span class="index">02</span>
+        <span class="leader"></span>
+        <span class="label">Caché L3 compartida</span>
+      </div>
+
+      <div class="callout" data-pos="bl" data-range="0.45,0.75">
+        <span class="index">03</span>
+        <span class="leader"></span>
+        <span class="label">Controlador de memoria</span>
+      </div>
+
+      <div class="callout" data-pos="br" data-range="0.7,1">
+        <span class="index">04</span>
+        <span class="leader"></span>
+        <span class="label">Interconexión / I-O</span>
+      </div>
+
+      <div class="progress-rail">
+        <div class="progress-fill" id="progressFill"></div>
+      </div>
+    </div>
   </div>
-</section>
 
-<footer>
-  <span>RES <span>1280×1280</span></span>
-  <span>FRAMES <span>121</span></span>
-  <span>FPS <span>24</span></span>
-  <span>ARG — <span>2026</span></span>
-</footer>
+  <section class="closing">
+    <h2>Construido en capas,<br>entendido en detalle.</h2>
+    <div>
+      <p>
+        Este recorrido visual está armado a partir de un render del die,
+        descompuesto en fotogramas y sincronizado con el scroll: cada
+        posición de la página corresponde a un punto exacto del giro,
+        sin depender de la reproducción de un video.
+      </p>
+      <a class="cta" href="#">Ver más proyectos →</a>
+    </div>
+  </section>
 
-<script src="script.js" defer></script>
+  <footer>
+    <span>RES <span>1280×1280</span></span>
+    <span>FRAMES <span>121</span></span>
+    <span>FPS <span>24</span></span>
+    <span>ARG — <span>2026</span></span>
+  </footer>
+
+  <script src="script.js" defer></script>
 </body>
+
 </html>

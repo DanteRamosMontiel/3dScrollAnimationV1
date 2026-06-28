@@ -3,10 +3,17 @@
   const ctx = canvas.getContext('2d');
   const scrollContainer = document.querySelector('.scroll-container');
   const progressFill = document.getElementById('progressFill');
+  const overlay = document.querySelector(".overlay");
+  const body = document.querySelector(".body");
   const callouts = Array.from(document.querySelectorAll('.callout')).map((el) => ({
     el,
     range: el.dataset.range.split(',').map(Number),
   }));
+
+  window.addEventListener("load", () => {
+    overlay.style.display = "none";
+    body.style.overflow = "auto";
+  });
 
   const FRAME_COUNT = 121;
   const FRAME_PATH = (i) => `media/frames/frame_${String(i).padStart(4, '0')}.jpg`;
