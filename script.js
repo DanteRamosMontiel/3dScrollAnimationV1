@@ -42,21 +42,19 @@
     if (!img || !img.complete) return;
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    const canvasRatio = canvas.width / canvas.height;
-    const imgRatio = img.naturalWidth / img.naturalHeight;
-    let sx, sy, sw, sh;
-    if (imgRatio > canvasRatio) {
-      sh = img.naturalHeight;
-      sw = sh * canvasRatio;
-      sx = (img.naturalWidth - sw) / 2;
-      sy = 0;
-    } else {
-      sw = img.naturalWidth;
-      sh = sw / canvasRatio;
-      sx = 0;
-      sy = (img.naturalHeight - sh) / 2;
-    }
-    ctx.drawImage(img, sx, sy, sw, sh, 0, 0, canvas.width, canvas.height);
+    const cw = canvas.width;
+    const ch = canvas.height;
+    const iw = img.naturalWidth;
+    const ih = img.naturalHeight;
+
+    // contain: escala la imagen para que entre completa, centrada
+    const scale = Math.min(cw / iw, ch / ih);
+    const dw = iw * scale;
+    const dh = ih * scale;
+    const dx = (cw - dw) / 2;
+    const dy = (ch - dh) / 2;
+
+    ctx.drawImage(img, 0, 0, iw, ih, dx, dy, dw, dh);
   }
 
   function getProgress() {

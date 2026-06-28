@@ -137,9 +137,9 @@ nav {
 #canvas {
   position: relative;
   z-index: 2;
-  width: min(82vw, 760px);
-  height: min(82vw, 760px);
-  max-height: 78vh;
+  /* Cuadrado que cabe en ambas dimensiones del viewport */
+  width: min(82vw, 82vh, 760px);
+  height: min(82vw, 82vh, 760px);
   display: block;
 }
 
